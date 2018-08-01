@@ -1,0 +1,18 @@
+:root {
+    --color-green: #55c57a;
+    --color-green-light: #7ed56f;
+    --color-green-dark: #28b485;
+    --color-silver: #e4e7ea;
+}
+html {
+    font-size: 10px;
+}
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1.6rem;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

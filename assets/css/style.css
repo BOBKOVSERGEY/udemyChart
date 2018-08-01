@@ -1,7 +1,5 @@
-:root {
-    --bgColor:yellow;
-}
+@import "base.css";
+@import "sign-login-form.css";
 
-body {
-    background-color: var(--bgColor);
-}
+
+
