@@ -3,12 +3,14 @@
     --color-green-light: #7ed56f;
     --color-green-dark: #28b485;
     --color-silver: #e4e7ea;
+    --color-white: #fff;
+    --color-black: #000;
 }
 html {
     font-size: 10px;
 }
 body {
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Comfortaa', cursive;
     font-size: 1.6rem;
 }
 * {
