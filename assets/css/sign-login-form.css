@@ -5,7 +5,27 @@
     height: 100vh;
 }
 .account-left {
+    position: relative;
     width: 70%;
+    background-image: linear-gradient(to right bottom, rgba(85, 197, 122, .8) 50%, transparent 50%), 
+    url(../img/account-bgc.jpg);
+
+    /*background-image: linear-gradient(to right bottom, rgba(40,180,133,.8) 50%, rgba(143, 210, 131, .8)), 
+    url(../img/account-bgc.jpg);*/
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.account-text {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: var(--color-white);
+}
+.account-text h1 {
+    margin-bottom: 15px;
 }
 .account-right {
     width: 30%;
@@ -90,4 +110,13 @@
     font-weight: 300;
     text-align: left;
     display: block;
+}
+
+@media (max-width: 765px) {
+    .account-left {
+        display: none;
+    }
+    .account-right {
+        width: 100%;
+    }
 }

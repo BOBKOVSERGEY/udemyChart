@@ -13,7 +13,10 @@
 <body>
     <div class="signup-container">
         <div class="account-left">
-            <h1>Account left</h1>
+            <div class="account-text">
+                <h1>Lets Chat</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
         </div>
         <div class="account-right">
             <div class="form-area">
