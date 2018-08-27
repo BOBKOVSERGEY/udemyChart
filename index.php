@@ -16,11 +16,52 @@
   </nav>
   <div class="chat-container">
     <section id="sidebar">
-
+      <ul class="left-ul">
+        <li><a href="#"><span class="profile-img-span"><img src="assets/img/pro4.jpg" alt="Profile image" class="profile-img"></span></a></li>
+        <li><a href="#">Shakil Khan <span class="cool-hover"></span></a></li>
+        <li><a href="#">Change Name <span class="cool-hover"></span></a></li>
+        <li><a href="#">Change Password <span class="cool-hover"></span></a></li>
+        <li><a href="#">110 User Online <span class="cool-hover"></span></a></li>
+      </ul>
     </section>
     <section id="right-area">
       <div class="messages">
-
+        <div class="left-message common-margin">
+          <div class="sender-img-block">
+            <img src="assets/img/pro3.jpg" alt="" class="sender-img">
+          </div>
+          <div class="left-msg-area">
+            <div class="user-name-date">
+              <span class="sender-name">
+                Shakil Khan
+              </span>
+              <span class="date-time">
+                1 day ago
+              </span>
+            </div>
+            <div class="left-msg">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil facilis cumque aspernatur suscipit, asperiores est dolorum, odio fugiat quo debitis architecto unde enim porro sit dicta, quibusdam impedit corporis amet.</p>
+            </div>
+          </div>
+        </div>
+        <div class="left-message common-margin">
+          <div class="sender-img-block">
+            <img src="assets/img/pro3.jpg" alt="" class="sender-img">
+          </div>
+          <div class="left-msg-area">
+            <div class="user-name-date">
+              <span class="sender-name">
+                Shakil Khan
+              </span>
+              <span class="date-time">
+                1 day ago
+              </span>
+            </div>
+            <div class="left-msg">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil facilis cumque aspernatur suscipit, asperiores est dolorum, odio fugiat quo debitis architecto unde enim porro sit dicta, quibusdam impedit corporis amet.</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="chat-form">
         

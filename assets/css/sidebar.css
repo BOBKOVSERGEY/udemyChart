@@ -1,0 +1,81 @@
+#sidebar {
+  width: 20%;
+  height: 90vh;
+  background-color: var(--color-white); 
+  box-shadow: .8rem 0 .6rem -1rem rgba(0,0,0,.5);
+  position: relative;
+}
+
+#sidebar:before {
+  content: 'Profile';
+  position: absolute;
+  width: 100%;
+  height: 10vh;
+  top:-10vh;
+  background: linear-gradient(to right, var(--color-green-light), var(--color-green-dark));
+  box-shadow: 3px -2px 5px rgba(0,0,0,.5);
+  line-height: 10vh;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--color-white);
+}
+
+.left-ul {
+  margin: 3rem o;
+  padding: 0
+}
+
+.left-ul li {
+  list-style: none;
+}
+
+.left-ul li:not(:first-child):hover {
+  background: linear-gradient(to right, var(--color-green-light), var(--color-green-dark));
+}
+
+.left-ul li:hover a {
+  color: var(--color-white);
+}
+
+.left-ul li a{
+  position: relative;
+  text-decoration: none;
+  display: block;
+  padding: 1.5rem 0;
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--color-silver-2);
+}
+.cool-hover {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(0,0,0,.2);
+  transition: all 1s;
+}
+
+.left-ul li:hover .cool-hover{
+  width: 100%;
+}
+
+.profile-img-span {
+  display: block;
+  overflow: hidden;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.profile-img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  transition: all .3s;
+}
+
+.profile-img-span:hover .profile-img {
+  transform: scale(1.2);
+}

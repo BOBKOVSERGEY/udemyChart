@@ -3,8 +3,10 @@
     --color-green-light: #8fd283;
     --color-green-dark: #28b485;
     --color-silver: #e4e7ea;
+    --color-silver-2: #54667a;
     --color-white: #fff;
     --color-black: #000;
+    
 }
 html {
     font-size: 10px;
@@ -12,6 +14,9 @@ html {
 body {
     font-family: 'Comfortaa', cursive;
     font-size: 1.6rem;
+}
+img {
+    max-width: 100%;
 }
 * {
     margin: 0;
