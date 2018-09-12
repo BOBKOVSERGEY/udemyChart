@@ -6,3 +6,12 @@
 #right-area {
   width: 80%;
 }
+
+@media (max-width: 765px) {
+  .chat-container {
+    flex-wrap: wrap;
+  }
+  #right-area {
+    width: 100%;
+  }
+}

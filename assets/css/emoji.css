@@ -1,0 +1,10 @@
+.emoji {
+    height: 5vh;
+    width: 100%;
+    padding: 5px;
+}
+.emoji-same {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+}

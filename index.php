@@ -12,15 +12,17 @@
 </head>
 <body>
   <nav id="nav">
-
+    <span class="bars">
+      <i class="fas fa-bars custom-bar"></i>
+    </span>
   </nav>
   <div class="chat-container">
     <section id="sidebar">
       <ul class="left-ul">
         <li><a href="#"><span class="profile-img-span"><img src="assets/img/pro4.jpg" alt="Profile image" class="profile-img"></span></a></li>
         <li><a href="#">Shakil Khan <span class="cool-hover"></span></a></li>
-        <li><a href="#">Change Name <span class="cool-hover"></span></a></li>
-        <li><a href="#">Change Password <span class="cool-hover"></span></a></li>
+        <li><a href="change_name.php">Change Name <span class="cool-hover"></span></a></li>
+        <li><a href="change_password.php">Change Password <span class="cool-hover"></span></a></li>
         <li><a href="#">110 User Online <span class="cool-hover"></span></a></li>
       </ul>
     </section>
@@ -143,9 +145,30 @@
           </div>
         </div>
       </div>
+      <div class="emoji">
+        <img src="assets/emoji/emoji1.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji2.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji3.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji4.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji5.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji6.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji7.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji8.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji9.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji10.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji11.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji12.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji13.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji14.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji15.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji16.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji17.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji18.png" alt="" class="emoji-same">
+        <img src="assets/emoji/emoji19.png" alt="" class="emoji-same">
+      </div>
     </section>
   </div>
 <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/file_label.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

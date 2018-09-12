@@ -21,22 +21,24 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: var(--color-green-dark);
   display: block;
   border-radius: 50%;
+  border: 2px solid var(--color-white);
 }
 
 .offline-icon {
   position: absolute;
   top: 0;
   right: 0;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: red;
   display: block;
   border-radius: 50%;
+  border: 2px solid var(--color-white);
 }
 
 .sender-name {
@@ -75,11 +77,10 @@
 .right-messages {
   display: flex;
   justify-content: flex-end;
-}
-.right-msg-area {
   max-width: 50%;
   width: auto;
 }
+
 .right-time {
   display: block;
   text-align: right;
@@ -108,4 +109,17 @@
 }
 .left-msg-area {
   margin-left: 2rem;
+}
+
+@media (max-width: 765px) {
+  .left-message {
+    width: 100%;
+  }
+  .right-messages {
+    max-width: 100%;
+    width: auto;
+  }
+  .messages {
+    height: 70vh;
+  }
 }

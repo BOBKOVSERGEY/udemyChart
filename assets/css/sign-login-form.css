@@ -88,6 +88,9 @@
 .account-btn:hover {
     cursor: pointer;
 }
+.account-btn:focus {
+    outline: none;
+}
 .upload-icon {
     margin-right: 1rem;
     font-size: 1.7rem;
