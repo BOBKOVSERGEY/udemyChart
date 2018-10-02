@@ -6,24 +6,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=1">
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&amp;subset=cyrillic" rel="stylesheet">
+  <?php
+    include __DIR__ . '/components/css.php';
+  ?>
 </head>
 <body>
-  <nav id="nav">
-
-  </nav>
+  <?php
+    include __DIR__ . '/components/nav.php';
+  ?>
   <div class="chat-container">
-    <section id="sidebar">
-      <ul class="left-ul">
-        <li><a href="#"><span class="profile-img-span"><img src="assets/img/pro4.jpg" alt="Profile image" class="profile-img"></span></a></li>
-        <li><a href="#">Shakil Khan <span class="cool-hover"></span></a></li>
-        <li><a href="#">Change Name <span class="cool-hover"></span></a></li>
-        <li><a href="#">Change Password <span class="cool-hover"></span></a></li>
-        <li><a href="#">110 User Online <span class="cool-hover"></span></a></li>
-      </ul>
-    </section>
+    <?php
+      include __DIR__ . '/components/sidebar.php';
+    ?>
     <section id="right-area">
       <div class="form-section">
         <form action="" method="post">
@@ -46,7 +40,8 @@
       </div>
     </section>
   </div>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/main.js"></script>
+<?php
+  include __DIR__ . '/components/js.php';
+?>
 </body>
 </html>

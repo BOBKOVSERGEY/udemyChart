@@ -77,13 +77,15 @@
 .right-messages {
   display: flex;
   justify-content: flex-end;
-  max-width: 50%;
-  width: auto;
 }
 
 .right-time {
   display: block;
   text-align: right;
+}
+.right-msg-area {
+  max-width: 50%;
+  width: auto;
 }
 
 .right-msg {
@@ -116,6 +118,10 @@
     width: 100%;
   }
   .right-messages {
+    max-width: 100%;
+    width: auto;
+  }
+  .right-msg-area {
     max-width: 100%;
     width: auto;
   }

@@ -1,3 +1,8 @@
+<?php
+include __DIR__ . '/init.php';
+
+$db = new DB();
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -6,9 +11,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create new account</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=1">
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&amp;subset=cyrillic" rel="stylesheet">
+    <?php
+      include __DIR__ . '/components/css.php';
+    ?>
 </head>
 <body>
     <div class="signup-container">
@@ -47,7 +52,8 @@
             </div>
         </div>
     </div>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/main.js"></script>
+<?php
+  include __DIR__ . '/components/js.php';
+?>
 </body>
 </html>
