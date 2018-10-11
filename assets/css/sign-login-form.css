@@ -41,6 +41,7 @@
 }
 .group {
     margin-bottom: 1.5rem;
+    position: relative;
 }
 .control {
     width: 100%;
@@ -113,6 +114,14 @@
     font-weight: 300;
     text-align: left;
     display: block;
+}
+
+.error {
+    position: absolute;
+    color: red;
+    top: 2px;
+    right: 1.5rem;
+    font-size: 1rem;
 }
 
 @media (max-width: 765px) {

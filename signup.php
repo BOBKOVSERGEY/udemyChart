@@ -1,7 +1,24 @@
 <?php
 include __DIR__ . '/init.php';
 
-$db = new DB();
+if ($_POST['signup']) {
+  $fullName = $_POST['full_name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $imgName = $_FILES['img']['name'];
+  $imgTmp = $_FILES['img']['tmp_name'];
+
+  $nameStatus = 1;
+  $emailStatus = 1;
+  $passwordStatus = 1;
+  $photoStatus = 1;
+
+  if (empty($fullName)) {
+    $nameError = 'Full name is required';
+    $nameStatus = '';
+  }
+}
+
 ?>
 <!doctype html>
 <html lang="ru">
@@ -25,12 +42,17 @@ $db = new DB();
         </div>
         <div class="account-right">
             <div class="form-area">
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="group">
                         <h2 class="form-heading">Create a new account</h2>
                     </div>
                     <div class="group">
                         <input type="text" name="full_name" class="control" placeholder="Enter Full name...">
+                        <?php if (isset($nameError)) {?>
+                          <div class="name-error error">
+                            <?php echo $nameError; ?>
+                          </div>
+                        <?php }?>
                     </div>
                     <div class="group">
                         <input type="email" name="email" class="control" placeholder="Enter Email...">
