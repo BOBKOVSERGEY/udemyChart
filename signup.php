@@ -3,9 +3,9 @@ include __DIR__ . '/init.php';
 $obj = new Base();
 
 if ($_POST['signup']) {
-  $fullName = $_POST['full_name'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+  $fullName = $obj->security($_POST['full_name']);
+  $email = $obj->security($_POST['email']);
+  $password = $obj->security($_POST['password']);
 
   $imgName = $_FILES['img']['name'];
   $imgTmp = $_FILES['img']['tmp_name'];
@@ -58,6 +58,16 @@ if ($_POST['signup']) {
   } else if (!in_array($imgExtensions, $extensions)) {
     $imageError = 'Invalid image extension';
     $photoStatus = '';
+  }
+
+  if (!empty($nameStatus) && !empty($emailStatus) && !empty($passwordStatus) && !empty($photoStatus)) {
+
+    // перемещаем файл и временной папки в указанную папку
+    move_uploaded_file($imgTmp, "$imgPath/$imgName");
+    $status = 0;
+    if ($obj->normalQuery("INSERT INTO users (name, email, password, image, status) VALUES (?,?,?,?,?)", [$fullName, $email, password_hash($password, PASSWORD_DEFAULT), $imgName, $status])) echo 'success';
+
+
   }
 
 

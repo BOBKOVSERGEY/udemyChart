@@ -22,4 +22,14 @@ class Base extends DB
     return $this->query->rowCount();
   }
 
+  public function fetchAll()
+  {
+    return $this->query->fetchAll(PDO::FETCH_OBJ);
+  }
+
+  public function security($data)
+  {
+    return trim(strip_tags($data));
+  }
+
 }
