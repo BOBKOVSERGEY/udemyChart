@@ -1,3 +1,49 @@
+<?php require __DIR__ . '/init.php';
+$obj = new Base;
+if (isset($_POST['login'])) {
+  $email = $obj->security($_POST['email']);
+  $password = $obj->security($_POST['password']);
+
+  $emailStatus = 1;
+  $passwordStatus = 1;
+
+  if (empty($email)) {
+    $emailError = 'Email is required';
+    $emailStatus = '';
+  }
+
+  if (empty($password)) {
+    $passwordError = 'Password is required';
+    $passwordStatus = '';
+  }
+
+  if (!empty($emailStatus) && !empty($passwordStatus)) {
+    if ($obj->normalQuery("SELECT * FROM users WHERE email = ?", [$email])) {
+
+      if ($obj->countRows() == 0) {
+        $emailError = 'Please enter correct email';
+      } else {
+        $row = $obj->fetchOne();
+        $dbEmail = $row->email;
+        $dbPassword = $row->password;
+        $userId = $row->id;
+        $userName = $row->name;
+
+
+        if (password_verify($password, $dbPassword)) {
+          $obj->createSession('user_name', $userName);
+          $obj->createSession('user_id', $userId);
+          header("Location: index.php");
+        } else {
+          $passwordError = 'Please enter correct password';
+        }
+
+      }
+
+    }
+  }
+}
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -20,15 +66,30 @@
   </div>
   <div class="account-right">
     <div class="form-area">
-      <form action="" method="post">
+      <?php if (isset($_SESSION['account_success'])) { ?>
+        <div class="alert alert-success">
+          <?php echo $_SESSION['account_success']; ?>
+        </div>
+      <?php } unset($_SESSION['account_success']);?>
+      <form action="<?php echo $_SERVER[PHP_SELF]?>" method="post">
         <div class="group">
           <h2 class="form-heading">User Login</h2>
         </div>
         <div class="group">
-          <input type="email" name="email" class="control" placeholder="Enter Email...">
+          <input type="email" name="email" class="control" placeholder="Enter Email..." value="<?php if (isset($email)) echo $email; ?>">
+          <?php if (isset($emailError)) { ?>
+            <div class="name-error error">
+              <?php echo $emailError; ?>
+            </div>
+          <?php } ?>
         </div>
         <div class="group">
-          <input type="password" name="password" class="control" placeholder="Create Password...">
+          <input type="password" name="password" class="control" placeholder="Create Password..." value="<?php if (isset($password)) echo $password; ?>">
+          <?php if (isset($passwordError)) { ?>
+            <div class="name-error error">
+              <?php echo $passwordError; ?>
+            </div>
+          <?php } ?>
         </div>
         <div class="group">
           <input type="submit" name="login" class="btn account-btn" value="User login">

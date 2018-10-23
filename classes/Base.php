@@ -32,4 +32,14 @@ class Base extends DB
     return trim(strip_tags($data));
   }
 
+  public function createSession($sessionName, $sessionValue)
+  {
+    $_SESSION[$sessionName] = $sessionValue;
+  }
+
+  public function fetchOne()
+  {
+    return $this->query->fetch(PDO::FETCH_OBJ);
+  }
+
 }
