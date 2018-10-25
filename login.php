@@ -1,4 +1,5 @@
-<?php require __DIR__ . '/init.php';
+<?php
+require __DIR__ . '/init.php';
 $obj = new Base;
 if (isset($_POST['login'])) {
   $email = $obj->security($_POST['email']);

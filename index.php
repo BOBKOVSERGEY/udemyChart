@@ -1,3 +1,10 @@
+<?php
+require __DIR__ . '/init.php';
+
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php");
+}
+?>
 <!doctype html>
 <html lang="ru">
 <head>
