@@ -1,3 +1,28 @@
+<?php
+require __DIR__ . '/init.php';
+
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php");
+}
+
+$obj = new Base();
+
+if (isset($_POST['change_name'])) {
+  $userName = $obj->security($_POST['user_name']);
+
+  if (empty($userName)) {
+    $userNameError = 'Sorry name is required';
+  } else if ($userName === $_SESSION['user_name'] ) {
+    $userNameError = 'Sorry is not different';
+  } else {
+    if ($obj->normalQuery("UPDATE users SET name = ? WHERE id = ?", [$userName, $_SESSION['user_id']])) {
+      $obj->createSession('user_name', $userName);
+      $obj->createSession('name_updated', 'Your name is successfully updated');
+      header('Location: index.php');
+    }
+  }
+}
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -20,12 +45,17 @@
     ?>
     <section id="right-area">
       <div class="form-section">
-        <form action="" method="post">
+        <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
           <div class="group">
             <h2 class="form-heading">Change Name</h2>
           </div>
           <div class="group">
-            <input type="text" name="user_name" class="control" placeholder="Name...">
+            <input type="text" name="user_name" class="control" placeholder="Name..." value="<?php echo $_SESSION['user_name']?>">
+            <?php if (isset($userNameError)) { ?>
+              <div class="name-error error">
+                <?php echo $userNameError; ?>
+              </div>
+            <?php } ?>
           </div>
           <div class="group">
             <input type="submit" name="change_name" class="btn account-btn" value="Save Changes">

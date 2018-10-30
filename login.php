@@ -29,11 +29,13 @@ if (isset($_POST['login'])) {
         $dbPassword = $row->password;
         $userId = $row->id;
         $userName = $row->name;
+        $userImage = $row->image;
 
 
         if (password_verify($password, $dbPassword)) {
           $obj->createSession('user_name', $userName);
           $obj->createSession('user_id', $userId);
+          $obj->createSession('user_image', $userImage);
           header("Location: index.php");
         } else {
           $passwordError = 'Please enter correct password';

@@ -4,6 +4,7 @@ require __DIR__ . '/init.php';
 if (!isset($_SESSION['user_id'])) {
   header("Location: login.php");
 }
+
 ?>
 <!doctype html>
 <html lang="ru">
@@ -18,6 +19,41 @@ if (!isset($_SESSION['user_id'])) {
     ?>
 </head>
 <body>
+  <?php if (isset($_SESSION['password_updated'])) {?>
+    <div class="flash success-flash">
+      <span class="remove">&times;</span>
+      <div class="flash-heading">
+        <h3><span class="checked--green">&#10004;</span> Success: you have done</h3>
+      </div>
+      <div class="flash-body">
+        <p><?php echo $_SESSION['password_updated'];?></p>
+      </div>
+    </div>
+  <?php }
+  unset($_SESSION['password_updated']);
+  ?>
+  <?php if (isset($_SESSION['name_updated'])) {?>
+    <div class="flash success-flash">
+      <span class="remove">&times;</span>
+      <div class="flash-heading">
+        <h3><span class="checked--green">&#10004;</span> Success: you have done</h3>
+      </div>
+      <div class="flash-body">
+        <p><?php echo $_SESSION['name_updated'];?></p>
+      </div>
+    </div>
+  <?php }
+  unset($_SESSION['name_updated']);
+  ?>
+  <!--<div class="flash error-flash">
+    <span class="remove">&times;</span>
+    <div class="flash-heading">
+      <h3><span class="checked--red">&#x2715;</span> Error: you have error</h3>
+    </div>
+    <div class="flash-body">
+      <p>First you need to login!</p>
+    </div>
+  </div>-->
     <?php
       include __DIR__ . '/components/nav.php';
     ?>

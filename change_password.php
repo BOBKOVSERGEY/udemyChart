@@ -46,7 +46,10 @@ if (isset($_POST['change_password'])) {
 
       if (password_verify($currentPassword, $dbPassword)) {
         if ($obj->normalQuery("UPDATE users SET password = ? WHERE id = ?", [password_hash($newPassword, PASSWORD_DEFAULT), $_SESSION['user_id']])) {
-          echo 'success';
+
+          $obj->createSession('password_updated', 'Your password is successfully updated');
+          header('Location: index.php');
+
         }
       } else {
         $currentPasswordError = 'Please enter correct password';
