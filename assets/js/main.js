@@ -1,9 +1,17 @@
 $(function () {
 
-   $('#file').on('change', function () {
-       var image_name = $('#file').val().split( '\\' ).pop();
-       $('#file-label').html(image_name);
-   });
+
+  $('#file').on('change', function () {
+    var image_name = $('#file').val().split( '\\' ).pop();
+    $('#file-label').html(image_name);
+  });
+
+  $('#change-image').on('change', function () {
+    var image_name = $('#change-image').val().split( '\\' ).pop();
+    $('#change-image-label').html(image_name);
+  });
+
+
 
    $('.custom-bar').on('click', function () {
      $('#sidebar').slideToggle();
