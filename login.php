@@ -33,6 +33,8 @@ if (isset($_POST['login'])) {
 
 
         if (password_verify($password, $dbPassword)) {
+          $status = 1;
+          $obj->normalQuery('UPDATE users SET status = ? WHERE id = ?', [$status, $userId]);
           $obj->createSession('user_name', $userName);
           $obj->createSession('user_id', $userId);
           $obj->createSession('user_image', $userImage);
@@ -60,6 +62,17 @@ if (isset($_POST['login'])) {
   ?>
 </head>
 <body>
+<?php if (isset($_SESSION['security'])) {?>
+  <div class="flash error-flash">
+    <span class="remove">&times;</span>
+    <div class="flash-heading">
+      <h3><span class="checked--red">&#x2715;</span> Error: you have error</h3>
+    </div>
+    <div class="flash-body">
+      <p><?php echo $_SESSION['security']; ?></p>
+    </div>
+  </div>
+<?php } unset($_SESSION['security']); ?>
 <div class="signup-container">
   <div class="account-left">
     <div class="account-text">

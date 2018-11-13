@@ -1,9 +1,7 @@
 <?php
 require __DIR__ . '/init.php';
 
-if (!isset($_SESSION['user_id'])) {
-  header("Location: login.php");
-}
+require __DIR__ . '/security.php';
 
 ?>
 <!doctype html>
@@ -57,7 +55,7 @@ if (!isset($_SESSION['user_id'])) {
       </div>
     </div>
   <?php }
-  unset($_SESSION['name_updated']);
+  unset($_SESSION['update_image']);
   ?>
 
   <!--<div class="flash error-flash">

@@ -1,9 +1,7 @@
 <?php
 require __DIR__ . '/init.php';
 
-if (!isset($_SESSION['user_id'])) {
-  header("Location: login.php");
-}
+require __DIR__ . '/security.php';
 
 $obj = new Base();
 
