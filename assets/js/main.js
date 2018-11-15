@@ -25,5 +25,24 @@ $(function () {
      $('.flash').fadeOut('slow');
    }, 5000);
 
+   $('.chat-form').on('keypress', function (e) {
+     if (e.keyCode == 13) {
+       var sendMessage = $('#send_message').val();
+       if (sendMessage.length != "") {
+          $.ajax({
+            type: 'POST',
+            url: 'ajax/send-message.php',
+            data: {sendMessage: sendMessage},
+            dataType: 'JSON',
+            success: function (feedback) {
+              if (feedback.status == 'success') {
+                $('.chat-form').trigger('reset');
+                console.log('msg is sent');
+              }
+            }
+          })
+       }
+     }
+   })
 
 });
