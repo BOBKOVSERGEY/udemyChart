@@ -43,6 +43,29 @@ $(function () {
           })
        }
      }
-   })
+   });
 
+  // Upload images and file
+  $('#upload-files').on('change', function () {
+    var fileName = $('#upload-files').val();
+    if (fileName != '') {
+      $.ajax({
+        type : 'POST',
+        url : 'ajax/send-files.php',
+        data : new FormData($('.chat-form')[0]),
+        contentType: false,
+        processData: false,
+        success: function (feedback) {
+          if (feedback == 'error') {
+            $('.files-error').addClass('show-file-error');
+            $('.files-error').html('<span class="files-cross-icon">&#x2715;</span> Please chose valid image');
+            setTimeout(function () {
+              $('.files-error').removeClass('show-file-error');
+            }, 5000);
+          }
+        }
+      });
+    }
+
+  });
 });

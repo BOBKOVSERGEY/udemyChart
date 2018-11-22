@@ -8,4 +8,5 @@
       <input type="file" name="file" id="upload-files" class="files-upload">
     </div>
   </div>
+  <div class="files-error"></div>
 </form>
