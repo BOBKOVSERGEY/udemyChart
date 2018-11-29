@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 15 2018 г., 17:04
+-- Время создания: Ноя 29 2018 г., 16:41
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.0.26
 
@@ -48,7 +48,13 @@ INSERT INTO `messages` (`msg_id`, `message`, `msg_type`, `user_id`, `msg_time`) 
 (5, 'ffууу', 'text', 12, '2018-11-15 13:57:26'),
 (6, 'кккккк', 'text', 12, '2018-11-15 13:57:48'),
 (7, 'jj', 'text', 12, '2018-11-15 13:59:04'),
-(8, 'hello brother what\'s ap?', 'text', 12, '2018-11-15 14:03:07');
+(8, 'hello brother what\'s ap?', 'text', 12, '2018-11-15 14:03:07'),
+(9, 'dddddddd', 'text', 12, '2018-11-22 12:19:54'),
+(10, 'k', 'text', 12, '2018-11-29 13:13:18'),
+(11, 'Б-1374112622-1.rtf', 'rtf', 12, '2018-11-29 13:32:10'),
+(12, 'user_aggreement.PDF', 'PDF', 12, '2018-11-29 13:34:18'),
+(13, 'Depositphotos_37101985_original.jpg', 'jpg', 12, '2018-11-29 13:35:03'),
+(14, 'Depositphotos_37101985_original.jpg', 'jpg', 12, '2018-11-29 13:38:44');
 
 -- --------------------------------------------------------
 
@@ -97,7 +103,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `msg_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

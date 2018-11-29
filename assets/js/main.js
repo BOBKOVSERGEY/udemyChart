@@ -55,13 +55,15 @@ $(function () {
         data : new FormData($('.chat-form')[0]),
         contentType: false,
         processData: false,
-        success: function (feedback) {
-          if (feedback == 'error') {
+        success: function (r) {
+          if (r == 'error') {
             $('.files-error').addClass('show-file-error');
-            $('.files-error').html('<span class="files-cross-icon">&#x2715;</span> Please chose valid image');
+            $('.files-error').html('<span class="files-cross-icon">&#x2715;</span> Please chose valid image/file');
             setTimeout(function () {
               $('.files-error').removeClass('show-file-error');
             }, 5000);
+          } else if (r == 'success') {
+            console.log('file/image sent');
           }
         }
       });
