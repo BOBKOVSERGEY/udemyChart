@@ -70,4 +70,23 @@ $(function () {
     }
 
   });
+  
+  // send emojy
+  $('.emoji-same').on('click', function () {
+    var emojy = $(this).attr('src');
+    $.ajax({
+      type: 'POST',
+      url: 'ajax/send-emojy.php',
+      data: {'send-emojy':emojy},
+      dataType: 'JSON',
+      success: function (r) {
+        if (r.status == 'success') {
+          console.log('Emojy sent');
+        }
+      },
+      error: function (r) {
+        console.log('error');
+      }
+    });
+  })
 });
