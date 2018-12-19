@@ -30,15 +30,39 @@ if (isset($_POST['login'])) {
         $userId = $row->id;
         $userName = $row->name;
         $userImage = $row->image;
+        $cleanStatus = $row->clean_status;
 
 
         if (password_verify($password, $dbPassword)) {
           $status = 1;
           $obj->normalQuery('UPDATE users SET status = ? WHERE id = ?', [$status, $userId]);
-          $obj->createSession('user_name', $userName);
-          $obj->createSession('user_id', $userId);
-          $obj->createSession('user_image', $userImage);
-          header("Location: index.php");
+
+
+          if ($cleanStatus == 0) {
+
+            if ($obj->normalQuery('SELECT msg_id FROM messages ORDER BY msg_id DESC LIMIT 1')) {
+              $lastRow = $obj->fetchOne();
+              $lastMsgId = $lastRow->msg_id + 1;
+
+              if ($obj->normalQuery('INSERT INTO clean (clean_message_id, clean_user_id) VALUES (?,?)', [$lastMsgId, $userId])) {
+                $updateCleanStatus = 1;
+                $obj->normalQuery('UPDATE users SET clean_status = ? WHERE id = ?', [$updateCleanStatus, $userId]);
+
+                $obj->createSession('user_name', $userName);
+                $obj->createSession('user_id', $userId);
+                $obj->createSession('user_image', $userImage);
+                header("Location: index.php");
+              }
+            }
+
+          } else {
+            $obj->createSession('user_name', $userName);
+            $obj->createSession('user_id', $userId);
+            $obj->createSession('user_image', $userImage);
+            header("Location: index.php");
+          }
+
+
         } else {
           $passwordError = 'Please enter correct password';
         }

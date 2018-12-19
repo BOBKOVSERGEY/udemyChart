@@ -26,6 +26,10 @@ class Base extends DB
   {
     return $this->query->fetchAll(PDO::FETCH_OBJ);
   }
+  public function fetchOne()
+  {
+    return $this->query->fetch(PDO::FETCH_OBJ);
+  }
 
   public function security($data)
   {
@@ -37,9 +41,6 @@ class Base extends DB
     $_SESSION[$sessionName] = $sessionValue;
   }
 
-  public function fetchOne()
-  {
-    return $this->query->fetch(PDO::FETCH_OBJ);
-  }
+
 
 }

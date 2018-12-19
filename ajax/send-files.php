@@ -6,7 +6,7 @@ if (isset($_FILES['file']['name'])) {
   $tmpName = $_FILES['file']['tmp_name'];
 
   $storeFiles = '../assets/img';
-  $extensions = ['jpg','jpeg', 'png', 'PDF', 'zip', 'docx', 'xlsx', 'rtf'];
+  $extensions = ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'pdf', 'PDF', 'zip', 'ZIP', 'docx', 'DOCX', 'xlsx', 'XLSX', 'rtf', 'RTF', 'pptx', 'PPTX'];
 
   $getFileExtension = explode('.', $fileName);
   $getExtension = end($getFileExtension);

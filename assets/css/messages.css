@@ -100,6 +100,30 @@
  
 }
 
+.right-files {
+  /* padding: 1.5rem;*/
+  width: auto;
+  background: var(--color-white);
+  /* border-top-right-radius: .5rem; */
+  border-radius: 0 .5rem .5rem .5rem;
+  margin-top: 1.5rem;
+  position: relative;
+}
+.right-files a {
+  text-decoration: none;
+  color: var(--color-green);
+}
+.right-files i {
+  font-size: 2.5rem;
+  margin-right: 5px;
+}
+.pdf {
+  color: var(--color-red);
+}
+.word {
+  color: #209ef7;
+}
+
 .common-margin {
   margin-top: 1.5rem;
 }

@@ -65,7 +65,8 @@ if ($_POST['signup']) {
     // перемещаем файл и временной папки в указанную папку
     move_uploaded_file($imgTmp, "$imgPath/$imgName");
     $status = 0;
-    if ($obj->normalQuery("INSERT INTO users (name, email, password, image, status) VALUES (?,?,?,?,?)", [$fullName, $email, password_hash($password, PASSWORD_DEFAULT), $imgName, $status])) {
+    $cleanStatus = 0;
+    if ($obj->normalQuery("INSERT INTO users (name, email, password, image, status, clean_status) VALUES (?,?,?,?,?,?)", [$fullName, $email, password_hash($password, PASSWORD_DEFAULT), $imgName, $status, $cleanStatus])) {
       $obj->createSession('account_success', 'Your account is successfully created');
       header("Location: login.php");
     };

@@ -90,3 +90,21 @@ $(function () {
     });
   })
 });
+
+
+function showMessages() {
+  var msg = true;
+  $.ajax({
+    type : 'GET',
+    url : 'ajax/show_messages.php',
+    data : {'message':msg},
+    success: function (r) {
+      $('.messages').html(r);
+    },
+    error: function (r) {
+      console.log(r);
+    }
+  })
+}
+
+showMessages();
