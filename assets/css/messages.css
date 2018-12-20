@@ -61,6 +61,24 @@
   position: relative;
   
 }
+.left-files {
+  /*padding: 1.5rem;*/
+  width: auto;
+  /*background: linear-gradient(to right, var(--color-green-light), var(--color-green-dark));*/
+  /*color: var(--color-white);*/
+  /* border-top-right-radius: .5rem; */
+  border-radius: 0 .5rem .5rem .5rem;
+  margin-top: 1.5rem;
+  position: relative;
+}
+.left-files a {
+  text-decoration: none;
+  color: var(--color-green);
+}
+.left-files i {
+  font-size: 2.5rem;
+  margin-right: 5px;
+}
 
 .left-msg::before {
   position: absolute;
@@ -135,6 +153,9 @@
 }
 .left-msg-area {
   margin-left: 2rem;
+}
+.time-icon {
+  color: var(--color-green);
 }
 
 @media (max-width: 765px) {
