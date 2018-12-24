@@ -1,5 +1,11 @@
 $(function () {
 
+  function scrollByEndMessage()
+  {
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 2000);
+  }
+
+  scrollByEndMessage();
 
   $('#file').on('change', function () {
     var image_name = $('#file').val().split( '\\' ).pop();
@@ -37,7 +43,8 @@ $(function () {
             success: function (feedback) {
               if (feedback.status == 'success') {
                 $('.chat-form').trigger('reset');
-                console.log('msg is sent');
+                showMessages();
+                scrollByEndMessage();
               }
             }
           })
@@ -63,7 +70,8 @@ $(function () {
               $('.files-error').removeClass('show-file-error');
             }, 5000);
           } else if (r == 'success') {
-            console.log('file/image sent');
+            showMessages();
+            scrollByEndMessage();
           }
         }
       });
@@ -81,7 +89,8 @@ $(function () {
       dataType: 'JSON',
       success: function (r) {
         if (r.status == 'success') {
-          console.log('Emojy sent');
+          showMessages();
+          scrollByEndMessage();
         }
       },
       error: function (r) {
@@ -89,6 +98,11 @@ $(function () {
       }
     });
   })
+
+  setInterval(function () {
+    showMessages();
+  }, 3000);
+
 });
 
 
