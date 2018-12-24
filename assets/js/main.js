@@ -101,9 +101,29 @@ $(function () {
 
   setInterval(function () {
     showMessages();
+    usersStatus();
   }, 3000);
 
 });
+
+
+function usersStatus() {
+  $.ajax({
+    type: 'GET',
+    url: 'ajax/users_status.php',
+    dataType: 'JSON',
+    success: function (r) {
+      console.log(r);
+      if (r['status'] == 'href') {
+        window.location = 'login.php'
+      }
+    },
+    error: function (r) {
+      console.log(r);
+    }
+  })
+}
+
 
 
 function showMessages() {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 20 2018 г., 13:53
+-- Время создания: Дек 24 2018 г., 12:41
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.0.26
 
@@ -87,10 +87,41 @@ INSERT INTO `messages` (`msg_id`, `message`, `msg_type`, `user_id`, `msg_time`) 
 (60, 'pres.pptx', 'pptx', 15, '2018-12-20 09:09:42'),
 (61, 'some', 'text', 14, '2018-12-20 09:11:14'),
 (62, 'assets/emoji/emoji16.png', 'emojy', 14, '2018-12-20 09:11:36'),
-(63, 'hey Sergey', 'text', 16, '2018-12-20 09:34:23'),
 (64, 'hi', 'text', 15, '2018-12-20 09:34:50'),
 (65, 'hi', 'text', 14, '2018-12-20 09:49:54'),
-(66, 'some', 'text', 14, '2018-12-20 10:25:55');
+(66, 'some', 'text', 14, '2018-12-20 10:25:55'),
+(67, 'assets/emoji/emoji19.png', 'emojy', 14, '2018-12-24 07:33:53'),
+(68, 'assets/emoji/emoji5.png', 'emojy', 14, '2018-12-24 07:38:41'),
+(69, 'assets/emoji/emoji14.png', 'emojy', 15, '2018-12-24 07:45:43'),
+(70, 'assets/emoji/emoji19.png', 'emojy', 15, '2018-12-24 07:45:55'),
+(71, 'fireworks-3816694_1280.jpg', 'jpg', 15, '2018-12-24 07:46:06'),
+(72, 'hello', 'text', 15, '2018-12-24 07:46:12'),
+(73, 'some.docx', 'docx', 15, '2018-12-24 07:46:46'),
+(74, 'assets/emoji/emoji10.png', 'emojy', 15, '2018-12-24 07:57:34'),
+(75, 'assets/emoji/emoji16.png', 'emojy', 15, '2018-12-24 07:57:37'),
+(76, 'assets/emoji/emoji17.png', 'emojy', 15, '2018-12-24 07:57:38'),
+(77, 'assets/emoji/emoji11.png', 'emojy', 15, '2018-12-24 08:00:10'),
+(78, 'assets/emoji/emoji18.png', 'emojy', 15, '2018-12-24 08:02:54'),
+(79, 'hi', 'text', 15, '2018-12-24 08:03:05'),
+(80, 'new', 'text', 15, '2018-12-24 08:03:09'),
+(81, 'happy-year-3848864_1280.jpg', 'jpg', 15, '2018-12-24 08:03:24'),
+(82, 'assets/emoji/emoji18.png', 'emojy', 15, '2018-12-24 08:05:47'),
+(83, 'assets/emoji/emoji5.png', 'emojy', 15, '2018-12-24 08:05:52'),
+(84, 'Depositphotos_37101985_original.jpg', 'jpg', 15, '2018-12-24 08:05:58'),
+(85, 'assets/emoji/emoji5.png', 'emojy', 14, '2018-12-24 08:07:32'),
+(86, 'assets/emoji/emoji19.png', 'emojy', 14, '2018-12-24 08:08:04'),
+(87, 'оророр', 'text', 14, '2018-12-24 08:08:11'),
+(88, 'vozdyhovody-v-ognezashite.jpg', 'jpg', 14, '2018-12-24 08:08:22'),
+(89, 'new.xlsx', 'xlsx', 14, '2018-12-24 08:08:32'),
+(90, 'hi serg', 'text', 15, '2018-12-24 08:12:42'),
+(91, 'Depositphotos_37101985_original.jpg', 'jpg', 15, '2018-12-24 08:12:51'),
+(92, 'assets/emoji/emoji18.png', 'emojy', 14, '2018-12-24 08:22:02'),
+(93, 'assets/emoji/emoji19.png', 'emojy', 14, '2018-12-24 08:22:08'),
+(94, 'assets/emoji/emoji9.png', 'emojy', 14, '2018-12-24 08:22:13'),
+(95, 'assets/emoji/emoji3.png', 'emojy', 14, '2018-12-24 08:22:25'),
+(96, 'assets/emoji/emoji14.png', 'emojy', 14, '2018-12-24 09:39:09'),
+(97, 'ааа', 'text', 14, '2018-12-24 09:39:15'),
+(98, 'assets/emoji/emoji5.png', 'emojy', 14, '2018-12-24 09:39:34');
 
 -- --------------------------------------------------------
 
@@ -114,8 +145,26 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `image`, `status`, `clean_status`) VALUES
 (14, 'Сергей Бобков', 'sergey_bobkov@inbox.ru', '$2y$10$.XuBYsure4V4fPp70DGdzepDODWrPmC5Sqjn8a94z8AANRulEFqoy', 'r-n-y.jpg', 1, 1),
-(15, 'Таран Кира', 'taran.kira@rambler.ru', '$2y$10$X9UmveLUlDFZPBFnXZjyP.ttPgi5ywetVaOtVh07lL/JfmP2BpaS6', 'happy-year-3848864_1280.jpg', 1, 1),
-(16, 'Тыняный Артем', 'tyn@tyn.ru', '$2y$10$UroYHUhBV7yVbvw2mVUp6.pytoVwcuAMZw9cx1A6CQf/Zy4da4joS', 'Depositphotos_37101985_original.jpg', 1, 1);
+(15, 'Таран Кира', 'taran.kira@rambler.ru', '$2y$10$X9UmveLUlDFZPBFnXZjyP.ttPgi5ywetVaOtVh07lL/JfmP2BpaS6', 'happy-year-3848864_1280.jpg', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users_activities`
+--
+
+CREATE TABLE `users_activities` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `login_time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `users_activities`
+--
+
+INSERT INTO `users_activities` (`id`, `user_id`, `login_time`) VALUES
+(1, 14, '1545644338');
 
 --
 -- Индексы сохранённых таблиц
@@ -141,6 +190,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `users_activities`
+--
+ALTER TABLE `users_activities`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -154,13 +209,19 @@ ALTER TABLE `clean`
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `msg_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT для таблицы `users_activities`
+--
+ALTER TABLE `users_activities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

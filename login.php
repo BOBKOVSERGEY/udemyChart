@@ -48,18 +48,54 @@ if (isset($_POST['login'])) {
                 $updateCleanStatus = 1;
                 $obj->normalQuery('UPDATE users SET clean_status = ? WHERE id = ?', [$updateCleanStatus, $userId]);
 
+
+                $loginTime = time();
+                if ($obj->normalQuery('SELECT * FROM users_activities WHERE user_id = ?', [$userId])) {
+                  $activityUsers = $obj->fetchOne();
+
+                  if ($activityUsers == 0) {
+                    $obj->normalQuery('INSERT INTO users_activities (user_id, login_time) VALUES (?,?)', [$userId, $loginTime]);
+                    $obj->createSession('user_name', $userName);
+                    $obj->createSession('user_id', $userId);
+                    $obj->createSession('user_image', $userImage);
+                    header("Location: index.php");
+                  } else {
+                    $obj->normalQuery('UPDATE users_activities SET login_time = ? WHERE user_id = ?', [$loginTime, $userId]);
+                    $obj->createSession('user_name', $userName);
+                    $obj->createSession('user_id', $userId);
+                    $obj->createSession('user_image', $userImage);
+                    header("Location: index.php");
+                  }
+
+                }
+
+              }
+            }
+
+          } else {
+            $loginTime = time();
+
+            if ($obj->normalQuery('SELECT * FROM users_activities WHERE user_id = ?', [$userId])) {
+              $activityUsers = $obj->fetchOne();
+              //debug($activityUsers);
+
+
+
+              if ($activityUsers == 0) {
+                $obj->normalQuery('INSERT INTO users_activities (user_id, login_time) VALUES (?,?)', [$userId, $loginTime]);
+                $obj->createSession('user_name', $userName);
+                $obj->createSession('user_id', $userId);
+                $obj->createSession('user_image', $userImage);
+                header("Location: index.php");
+              } else {
+                $obj->normalQuery('UPDATE users_activities SET login_time = ? WHERE user_id = ?', [$loginTime, $userId]);
                 $obj->createSession('user_name', $userName);
                 $obj->createSession('user_id', $userId);
                 $obj->createSession('user_image', $userImage);
                 header("Location: index.php");
               }
-            }
 
-          } else {
-            $obj->createSession('user_name', $userName);
-            $obj->createSession('user_id', $userId);
-            $obj->createSession('user_image', $userImage);
-            header("Location: index.php");
+            }
           }
 
 
